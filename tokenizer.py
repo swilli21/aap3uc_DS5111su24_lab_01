@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
 
 # Week 3 Lab : python counter, cleaner, tokenizer
 
@@ -60,15 +58,13 @@ def count_words(data):
     return counts
 #TEST
 def test_tokenize():
-    
+
     assert tokenize("a b c") == ['a', 'b', 'c']
 
 if __name__=="__main__":
-    
-    data =  '''A man of genius usually gains a footing with the success of some one
-effort, and this is not always his greatest. Recognition is the more
-instant for having been postponed. He does not acquire it, like a miser's
-fortune, coin after coin, but "not at all or all in all." '''
+
+    data =  '''A man of genius usually gains a footing with the success of some one effort, and this is not always his greatest. Recognition is the more
+    instant for having been postponed. He does not acquire it, like a miser's fortune, coin after coin, but "not at all or all in all." '''
     clean_text(data)
     tokenize(data)
     count_words(data)
