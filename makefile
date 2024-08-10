@@ -1,6 +1,6 @@
 #!/bin/bash
 
-default: 
+default:
 	@cat makefile
 
 pg17192.txt:
@@ -26,6 +26,3 @@ env:
 
 update: env
 	source env/bin/activate; pip install -r requirements.txt
-
-tests:
-	pytest -v test_newfiles.py
