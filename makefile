@@ -22,7 +22,7 @@ total_words:
 	bash total_words.sh
 
 env:
-        python3 -m venv env; source env/bin/activate; pip install --upgrade pip;
+	python3 -m venv env; source env/bin/activate; pip install --upgrade pip;
 
 update: env
-        source env/bin/activate; pip install -r requirements.txt
+	source env/bin/activate; pip install -r requirements.txt
