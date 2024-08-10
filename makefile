@@ -1,6 +1,6 @@
 #!/bin/bash
 
-default: 
+default:
 	@cat makefile
 
 pg17192.txt:
@@ -22,10 +22,7 @@ total_words:
 	bash total_words.sh
 
 env:
-	python3 -m venv env; source env/bin/activate; pip install --upgrade pip;
+        python3 -m venv env; source env/bin/activate; pip install --upgrade pip;
 
 update: env
-	source env/bin/activate; pip install -r requirements.txt
-
-tests:
-	pytest -v test_newfiles.py
+        source env/bin/activate; pip install -r requirements.txt
