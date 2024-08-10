@@ -126,7 +126,7 @@ class TestTextFunctions(unittest.TestCase):
     @pytest.mark.integration
     def test_integration_file_processing(self):
         # Integration test: download, clean, tokenize, and count words
-        url = 'https://www.gutenberg.org/files/1063/1063-0.txt'  # Example URL for a text file
+        url = 'https://www.gutenberg.org/cache/epub/14082/pg14082.txt'  # Example URL for a text file
         save_path = 'test_integration_file.txt'
 
         # Download the file
@@ -158,7 +158,7 @@ class TestTextFunctions(unittest.TestCase):
         # Integration test with multiple files
         files = [
             "https://www.gutenberg.org/cache/epub/17192/pg17192.txt",
-            "https://www.gutenberg.org/cache/epub/14082/pg14082.txt"
+            "https://www.gutenberg.org/cache/epub/1063/pg1063.txt"
         ]
         word_to_check = 'the'
 
