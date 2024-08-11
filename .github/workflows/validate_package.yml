@@ -23,13 +23,13 @@ on:
         default: "final_review"
         required: true
         type: string
-  
+
 
 permissions:
   id-token: write
   contents: read
   pull-requests: write
-  
+
 jobs:
   validate-package:
     name: Validate Installable Package
@@ -40,7 +40,7 @@ jobs:
       run:
         shell: bash
     steps:
-    - name: Create env, install package, test package import 
+    - name: Create env, install package, test package import
       env:
         GHANDLE: ${{ inputs.github-id }}
         VID: ${{ inputs.uuid }}
