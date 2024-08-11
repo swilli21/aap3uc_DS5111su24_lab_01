@@ -2,28 +2,28 @@ name: DS5111 su24 package tester
 
 on:
   push:
-  workflow_dispatch:
-    inputs:
-      uuid:
-        desciption: "Virginia uuid"
-        default: "aap3uc"
-        required: true
-        type: string
-      github-id:
-        description: "Github handle"
-        default: "swilli21"
-        required: true
-        type: string
-      package-name:
-        description: "Name of package after pip install"
-        default: "pkg_aap3uc"
-        required: true
-        type: string
-      branch-name: ""
-        description: "Name of branch for pip install"
-        default: "Week06/Install_package"
-        required: true
-        type: string
+    workflow_dispatch:
+      inputs:
+        uuid:
+          desciption: "Virginia uuid"
+          default: "aap3uc"
+          required: true
+          type: string
+        github-id:
+          description: "Github handle"
+          default: "swilli21"
+          required: true
+          type: string
+        package-name:
+          description: "Name of package after pip install"
+          default: "pkg_aap3uc"
+          required: true
+          type: string
+        branch-name:
+          description: "Name of branch for pip install"
+          default: "Week06/Install_package"
+          required: true
+          type: string
 
 
 permissions:
