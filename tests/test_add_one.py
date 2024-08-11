@@ -1,7 +1,7 @@
 import sys
 sys.path.append('./src')
 
-import dpy8wq as pkg
+import pkg_aap3uc as pkg
 
 
 def test_add_one():
