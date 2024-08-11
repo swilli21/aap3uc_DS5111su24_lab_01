@@ -60,4 +60,4 @@ jobs:
         echo "\n======================================================================================"
         echo "TEST IMPORT PACKAGE"
         echo "======================================================================================"
-        . env/bin/activate; python -c "import ${PACKAGE} as pkg; print(pkg.pkg_aap3uc('To be or not to be'))"
+        . env/bin/activate; python -c "import ${PACKAGE} as pkg; print(pkg.functions('To be or not to be'))"
