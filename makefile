@@ -28,4 +28,4 @@ update: env
 	source env/bin/activate; pip install -r requirements.txt
 
 lint:
-	pylint test/
+	pylint --ignore=test/__init__.py test/
