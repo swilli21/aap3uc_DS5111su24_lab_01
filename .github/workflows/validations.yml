@@ -6,22 +6,22 @@ on:
     inputs:
       uuid:
         desciption: "Virginia uuid"
-        default: ""
+        default: "aap3uc"
         required: true
         type: string
       github-id:
         description: "Github handle"
-        default: ""
+        default: "swilli21"
         required: true
         type: string
       package-name:
         description: "Name of package after pip install"
-        default: ""
+        default: "pkg_aap3uc"
         required: true
         type: string
-      branch-name:
+      branch-name: "Week06/Install_package"
         description: "Name of branch for pip install"
-        default: "final_review"
+        default: "Week06/Install_package"
         required: true
         type: string
 
