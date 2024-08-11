@@ -19,7 +19,7 @@ on:
         default: "pkg_aap3uc"
         required: true
         type: string
-      branch-name: "Week06/Install_package"
+      branch-name: ""
         description: "Name of branch for pip install"
         default: "Week06/Install_package"
         required: true
