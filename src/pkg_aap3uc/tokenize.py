@@ -1,10 +1,10 @@
-from collections import Counter
-import string
-
 """
 This module provides functions to clean text, tokenize it into words,
 and count the frequency of each word.
 """
+
+from collections import Counter
+import string
 
 def clean_text(text):
     """
