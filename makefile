@@ -28,4 +28,4 @@ update: env
 	source env/bin/activate; pip install -r requirements.txt
 
 lint:
-	pylint --ignore=test/__init__.py test/
+	pylint src/pkg_aap3uc/tokenize.py
