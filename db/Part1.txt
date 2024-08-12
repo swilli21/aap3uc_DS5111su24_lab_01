@@ -1,0 +1,48 @@
+1) (3 PTS) What tables should you build?
+Answer: - Courses , Instructors, Terms, Learning Outcomes, Course Assignment
+
+2) (2 PTS) For each table, what field(s) will you use for primary key?
+Answer - 1. Courses : course_id
+         2. Instructors : instructor_id
+         3. Terms : term_id
+         4. Learning Outcomes : learning_id
+         5. Course Assignment : assign_id
+
+3) (2 PTS) For each table, what foreign keys will you use?
+Answer - 1. Learning Outcomes : course_id
+         2. Course Assignment : course_id ,instructor_id, term_id
+
+4) (2 PTS) Learning outcomes, courses, and instructors need a flag to indicate if they are currently active or not. How will your database support this feature? In particular:
+Answer - 1. Courses : active flag ( true for active and false for inactive)
+         2. Instructors : active flag ( 1 for active and 0 for inactive or true & false)
+
+5) (1 PT) Is there anything to normalize in the database, and if so, how will you normalize it? Recall the desire to eliminate redundancy.
+Answer - A unique constraint ensures that all values in a column (or a group of columns) are distinct.
+       -First Normal Form (1NF): Ensure that each column contains atomic (indivisible) values and that each record is unique.
+
+6) (1 PT) Are there indexes that you should build? Explain your reasoning.
+Answer - Primary keys automatically create unique indexes, which ensure efficient lookups and data integrity. These will be:
+Courses: Index on course_id
+Instructors: Index on instructor_id
+Terms: Index on term_id
+Learning Outcomes: Index on learning_id
+Course Assignment: Index on assign_id
+Foreign Key Indexes - Indexes on foreign key fields are important for optimizing JOIN operations and upholding referential integrity.
+
+
+7) (2 PTS) Are there constraints to enforce? Explain your answer and strategy.
+Answer - Yes
+Primary Key Constraints - ensure that each row in a table can be uniquely identified.
+Foreign Key Constraints -  enforce referential integrity, ensuring that a value in a foreign key column must exist in the referenced primary key column.
+NOT NULL Constraints - ensure that certain columns always have values, you should enforce NOT NULL constraints on fields that should never be empty.
+
+8) (5 PTS) Draw and submit a Relational Model for your project. For an example, see Beginning Database Design Solutions page 115 Figure 5-28.
+Answer - Database Design PNG
+
+9) (2 PTS) Suppose you were asked if your database could also support the UVA SDS Residential MSDS Program. Explain any issues that might arise, changes to the database structure (schema), and new data that might be needed. Note you won’t actually need to support this use case for the project.
+Answer - Student Management
+Issue: you would need to differentiate between students in the residential versus online programs.
+
+Solution:
+Students Table: A new Students table with a program_id foreign key to indicate whether a student is enrolled in the online or residential program.
+Enrollments: A Student_Course_Enrollment table to track which students are enrolled in which courses, with a program_id to differentiate between program-specific enrollments.
