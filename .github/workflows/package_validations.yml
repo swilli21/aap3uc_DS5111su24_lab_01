@@ -1,0 +1,63 @@
+name: DS5111 su24 package tester
+
+on:
+  push:
+    workflow_dispatch:
+      inputs:
+        uuid:
+          desciption: "Virginia uuid"
+          default: "aap3uc"
+          required: true
+          type: string
+        github-id:
+          description: "Github handle"
+          default: "swilli21"
+          required: true
+          type: string
+        package-name:
+          description: "Name of package after pip install"
+          default: "pkg_aap3uc"
+          required: true
+          type: string
+        branch-name:
+          description: "Name of branch for pip install"
+          default: "Week06/Install_package"
+          required: true
+          type: string
+
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate-package:
+    name: Validate Installable Package
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.8-bullseye
+    defaults:
+      run:
+        shell: bash
+    steps:
+    - name: Create env, install package, test package import
+      env:
+        GHANDLE: ${{ inputs.github-id }}
+        VID: ${{ inputs.uuid }}
+        PACKAGE: pkg_aap3uc
+        BRANCH: Week06/Install_package
+      run: |
+        python3 -m venv env; . env/bin/activate; pip install --upgrade pip
+        echo "\n======================================================================================"
+        echo "installing from git+https://github.com/swilli21/aap3uc_DS5111su24_lab_01@${BRANCH}"
+        echo "======================================================================================"
+        . env/bin/activate; pip install git+https://github.com/swilli21/aap3uc_DS5111su24_lab_01@${BRANCH}
+        echo "\n======================================================================================"
+        echo "PIP LIST"
+        echo "======================================================================================"
+        . env/bin/activate; pip list
+        echo "\n======================================================================================"
+        echo "TEST IMPORT PACKAGE"
+        echo "======================================================================================"
+        . env/bin/activate; python -c "import ${PACKAGE} as pkg; print(pkg.tokenize('To be or not to be'))"
